@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 2 - Portfolio</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .hero {
+      position: relative;
+      width: 100%;
+      max-width: var(--maxw);
+      margin: 0 auto 32px auto;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 32px rgba(12,16,30,0.10);
+      overflow: hidden;
+      transition: height 0.3s, box-shadow 0.3s, padding 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding: 32px 24px;
+      height: 340px;
+    }
+    .hero.shrink {
+      height: 90px;
+      padding: 12px 24px;
+      box-shadow: 0 2px 8px rgba(12,16,30,0.06);
+      gap: 18px;
+    }
+    .hero-img {
+      height: 220px;
+      width: 220px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      transition: height 0.3s, width 0.3s;
+    }
+    .hero.shrink .hero-img {
+      height: 60px;
+      width: 60px;
+    }
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 0;
+      transition: font-size 0.3s;
+    }
+    .hero.shrink .hero-title {
+      font-size: 1.2rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: var(--gap);
+      margin-bottom: 40px;
+    }
+    .gallery-item {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 16px rgba(12,16,30,0.07);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 340px;
+    }
+    .gallery-img, .gallery-gif {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: #eee;
+      display: block;
+    }
+    .gallery-gif {
+      background: #222;
+    }
+    .gallery-text {
+      padding: 18px 16px;
+      flex: 1;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+    @media (max-width: 700px) {
+      .hero {
+        flex-direction: column;
+        height: 220px;
+        padding: 18px 8px;
+      }
+      .hero-img {
+        height: 80px;
+        width: 80px;
+      }
+      .hero-title {
+        font-size: 1.3rem;
+      }
+      .gallery-img, .gallery-gif {
+        height: 120px;
+      }
+      .gallery-item {
+        min-height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero" id="heroBox">
+      <img src="../images/gameboxcompressed.jpg" alt="Project Hero" class="hero-img" id="heroImg">
+      <h1 class="hero-title" id="heroTitle">Project 2: Amazing Demo</h1>
+    </div>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="../images/lightboxcompressed.jpg" alt="Photo 1" class="gallery-img">
+        <div class="gallery-text">
+          <strong>Photo 1:</strong> Description and explanation of the project step or feature shown here. Add as much text as you want to elaborate.
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/gameboxcompressed.jpg" alt="Photo 2" class="gallery-img">
+        <div class="gallery-text">
+          <strong>Photo 2:</strong> More details about this part of the project. You can write a long explanation here.
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/lightboxcompressed.jpg" alt="Photo 3" class="gallery-img">
+        <div class="gallery-text">
+          <strong>Photo 3:</strong> Further explanation, technical details, or results. Text area is flexible.
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/gameboxcompressed.jpg" alt="Photo 4" class="gallery-img">
+        <div class="gallery-text">
+          <strong>Photo 4:</strong> Add more commentary, insights, or background here.
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/lightboxcompressed.jpg" alt="Photo 5" class="gallery-img">
+        <div class="gallery-text">
+          <strong>Photo 5:</strong> Final thoughts, summary, or next steps. You can add a lot of text here.
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/gameboxcompressed.jpg" alt="Photo 6" class="gallery-img">
+        <div class="gallery-text">
+          <strong>Photo 6:</strong> Optional extra photo and explanation.
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/gameboxcompressed.jpg" alt="Photo 7" class="gallery-img">
+        <div class="gallery-text">
+          <strong>Photo 7:</strong> More details or commentary.
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/gameboxcompressed.jpg" alt="Photo 8" class="gallery-img">
+        <div class="gallery-text">
+          <strong>Photo 8:</strong> Add as much text as you want here.
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/gameboxcompressed.jpg" alt="Photo 9" class="gallery-img">
+        <div class="gallery-text">
+          <strong>Photo 9:</strong> Flexible text area for explanations.
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/gameboxcompressed.jpg" alt="Photo 10" class="gallery-img">
+        <div class="gallery-text">
+          <strong>Photo 10:</strong> Add more details here.
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/gameboxcompressed.jpg" alt="Photo 11" class="gallery-img">
+        <div class="gallery-text">
+          <strong>Photo 11:</strong> Final explanation or summary.
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/gameboxcompressed.jpg" alt="Photo 12" class="gallery-img">
+        <div class="gallery-text">
+          <strong>Photo 12:</strong> Add as much text as you want here.
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/gameboxcompressed.jpg" alt="Photo 13" class="gallery-img">
+        <div class="gallery-text">
+          <strong>Photo 13:</strong> Flexible text area for explanations.
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/gameboxcompressed.jpg" alt="Photo 14" class="gallery-img">
+        <div class="gallery-text">
+          <strong>Photo 14:</strong> Add more details here.
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/gameboxcompressed.jpg" alt="Photo 15" class="gallery-img">
+        <div class="gallery-text">
+          <strong>Photo 15:</strong> Final explanation or summary.
+        </div>
+      </div>
+      <!-- Example GIF item -->
+      <div class="gallery-item">
+        <img src="../images/gameboxcompressed.jpg" alt="Photo 16" class="gallery-img">
+        <div class="gallery-text">
+          <strong>Photo 16:</strong> This box can contain a GIF below to show functionality:<br>
+          <img src="../images/demo.gif" alt="Demo GIF" class="gallery-gif">
+          <br>Explanation of the GIF and what it demonstrates.
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Shrinking hero box on scroll
+    const hero = document.getElementById('heroBox');
+    let lastScroll = 0;
+    window.addEventListener('scroll', function() {
+      const scrollY = window.scrollY;
+      if(scrollY > 60) {
+        hero.classList.add('shrink');
+      } else {
+        hero.classList.remove('shrink');
+      }
+      lastScroll = scrollY;
+    });
+  </script>
+</body>
+</html>
