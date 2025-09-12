@@ -1,13 +1,93 @@
 <!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alfonsus Agapinan - Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Alfonsus Agapinan — Electrical Engineering Portfolio</title>
+  <meta name="description" content="Alfonsus Agapinan — projects in embedded systems, PCB design, and firmware." />
+
+  <!-- Fancy, clean fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello, I’m Alfonsus 👋</h1>
-  <p>Welcome to my portfolio website. More projects coming soon!</p>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <h1 class="site-title">Alfonsus Agapinan</h1>
+        <p class="site-sub">Electrical Engineering Student — Embedded systems · PCB design · Firmware</p>
+      </div>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="projects" class="section">
+      <h2 class="section-title">Selected Projects</h2>
+
+      <div class="projects-grid">
+        <!-- --- Project Card (copy for each project) --- -->
+        <article class="project-card">
+          <img src="gameboxcompressed.jpg" alt="gamebox" class="project-img">
+          <div class="project-body">
+            <h3 class="project-title">"G-boy" ; 9V Simple Videogame Console</h3>
+            <p class="project-desc">Built and soldered a game box with a custom-manufactured PCB and coded games onto an "Arduino UNO"</p>
+            <ul class="tech-list">
+              <li>Arduino UNO</li>
+              <li>16×2 LCD Interfacing in 8bit mode</li>
+              <li>Custom PCB prototype</li>
+            </ul>
+            <a class="project-cta" href="projects/project1.html" target="_blank" rel="noopener">More details →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="lightboxcompressed.jpg" alt="Lightbox" class="project-img">
+          <div class="project-body">
+            <h3 class="project-title">Battery Powered Blinking Lightbox</h3>
+            <p class="project-desc">9V Battery connected to custom-PCB and soldered to RGB LED light strip</p>
+            <ul class="tech-list">
+              <li>LED RGB Strip</li>
+              <li>9V</li>
+              <li>Custom Produced and Soldered</li>
+            </ul>
+            <a class="project-cta" href="projects/project2.html" target="_blank" rel="noopener">More details →</a>
+          </div>
+        </article>
+
+        <!-- Add more .project-card blocks here for additional projects -->
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2 class="section-title">About</h2>
+      <p>I'm an electrical engineering student at NJIT building firmware and hardware prototypes. I design PCBs, write embedded C/C++, and prototype sensors and data loggers.</p>
+    </section>
+
+    <section id="contact" class="section">
+      <h2 class="section-title">Contact</h2>
+      <p>Email: <a href="mailto:alfonsusaga58@gmail.com">alfonsusaga58@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/yourusername" target="_blank" rel="noopener">github.com/yourusername</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Alfonsus Agapinan — Built with care.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
