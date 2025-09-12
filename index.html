@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Alfonsus Agapinan — Electrical Engineering Portfolio</title>
-  <meta name="description" content="Alfonsus Agapinan — projects in embedded systems, PCB design, and firmware." />
+  <meta name="description" content="Alfonsus Agapinan — projects in embedded systems, hardware prototyping with PCB assembly, and rapid fabrication using CAD, 3D printing, and laser cutting." />
 
   <!-- Fancy, clean fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,9 +22,26 @@
         <p class="site-sub">Electrical and Computer Engineering Student — Embedded systems · PCB </p>
       </div>
       <nav class="top-nav" aria-label="Main navigation">
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <div class="dropdown">
+          <button class="dropbtn" id="projectsDropdownBtn">Projects ▼</button>
+          <div class="dropdown-content" id="projectsDropdown">
+            <a href="projects/project1.html">G-boy ; 9V Simple Videogame Console</a>
+            <a href="projects/project2.html">Battery Powered Blinking Lightbox</a>
+            <!-- Add more projects here as needed -->
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn" id="aboutDropdownBtn">About ▼</button>
+          <div class="dropdown-content" id="aboutDropdown">
+            <span style="padding:12px 18px;display:block;color:var(--muted);">Coming soon!</span>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn" id="contactDropdownBtn">Contact ▼</button>
+          <div class="dropdown-content" id="contactDropdown">
+            <span style="padding:12px 18px;display:block;color:var(--muted);">Coming soon!</span>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -45,7 +62,7 @@
               <li>16×2 LCD Interfacing in 8bit mode</li>
               <li>Custom PCB prototype</li>
             </ul>
-            <a class="project-cta" href="projects/project1.html" target="_blank" rel="noopener">More details →</a>
+            <a class="project-cta" href="projects/project1.html">More details →</a>
           </div>
         </article>
 
@@ -59,7 +76,7 @@
               <li>9V</li>
               <li>Custom Produced and Soldered</li>
             </ul>
-            <a class="project-cta" href="projects/project2.html" target="_blank" rel="noopener">More details →</a>
+            <a class="project-cta" href="projects/project2.html">More details →</a>
           </div>
         </article>
 
@@ -76,6 +93,7 @@
       <h2 class="section-title">Contact</h2>
       <p>Email: <a href="mailto:alfonsusaga58@gmail.com">alfonsusaga58@gmail.com</a></p>
       <p>GitHub: <a href="https://github.com/alphiea123" target="_blank" rel="noopener">github.com/alphiea123</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/alfonsus-agapinan-80449237b" target="_blank" rel="noopener">www.linkedin.com/in/alfonsusagapinan</a> </p>
     </section>
   </main>
 
@@ -88,6 +106,75 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Dropdown menu logic for all dropdowns
+    function setupDropdown(btnId, dropdownId) {
+      const btn = document.getElementById(btnId);
+      const dropdown = btn.parentElement;
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        dropdown.classList.toggle('show');
+      });
+      document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('show');
+        }
+      });
+    }
+    setupDropdown('projectsDropdownBtn', 'projectsDropdown');
+    setupDropdown('aboutDropdownBtn', 'aboutDropdown');
+    setupDropdown('contactDropdownBtn', 'contactDropdown');
+  </script>
 </body>
+<style>
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropbtn {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    padding: 0;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--card);
+    min-width: 260px;
+    box-shadow: 0 8px 24px rgba(12,16,30,0.10);
+    border-radius: var(--radius);
+    z-index: 1;
+    margin-top: 8px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.22s ease, transform 0.22s ease;
+  }
+  .dropdown-content a {
+    color: var(--text);
+    padding: 12px 18px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.98rem;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.18s;
+  }
+  .dropdown-content a:last-child {
+    border-bottom: none;
+  }
+  .dropdown-content a:hover {
+    background: rgba(37,99,235,0.08);
+    color: var(--accent);
+  }
+  .dropdown.show .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
 </html>
 
