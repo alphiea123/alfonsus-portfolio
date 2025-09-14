@@ -104,6 +104,19 @@
         min-height: 220px;
       }
     }
+
+    .hero-text {
+      width: 180px;
+      height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 8px rgba(12,16,30,0.06);
+      padding: 24px;
+      box-sizing: border-box;
+    }
   </style>
 </head>
 <body>
@@ -121,7 +134,9 @@
   <div class="container">
     <div class="hero" id="heroBox">
   <video controls autoplay loop muted src="videos/Gamebox.mp4" class="hero-img"></video>
-      <h1 class="hero-title" id="heroTitle">"G-boy" : Arduino Powered Videogame Console </h1>
+      <div class="hero-text">
+        <h1 class="hero-title" id="heroTitle">"G-boy" : Arduino Powered Videogame Console </h1>
+      </div>
     </div>
     <div class="gallery">
       <div class="gallery-item">
@@ -241,3 +256,5 @@
   </script>
 </body>
 </html>
+      }
+
