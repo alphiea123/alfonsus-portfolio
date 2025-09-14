@@ -101,28 +101,34 @@
       <p>© <span id="year"></span> Alfonsus Agapinan — Built with care.</p>
     </div>
   </footer>
+
+  <!-- Consolidated script: set year once and safely initialize dropdowns if present -->
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    // Dropdown menu logic for all dropdowns
-    function setupDropdown(btnId, dropdownId) {
+    // set footer year if element exists
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // safe dropdown setup: no-op if button is missing
+    function setupDropdown(btnId) {
       const btn = document.getElementById(btnId);
-      const dropdown = btn.parentElement;
-      btn.addEventListener('click', function(e) {
+      if (!btn) return;
+      const dropdownWrap = btn.parentElement;
+      btn.addEventListener('click', function (e) {
         e.preventDefault();
-        dropdown.classList.toggle('show');
-      });
-      document.addEventListener('click', function(e) {
-        if (!dropdown.contains(e.target)) {
-          dropdown.classList.remove('show');
-        }
+        dropdownWrap.classList.toggle('show');
       });
     }
-    setupDropdown('projectsDropdownBtn', 'projectsDropdown');
-    setupDropdown('aboutDropdownBtn', 'aboutDropdown');
-    setupDropdown('contactDropdownBtn', 'contactDropdown');
+
+    // close any open dropdown when clicking outside
+    document.addEventListener('click', function (e) {
+      document.querySelectorAll('.dropdown.show').forEach(function (el) {
+        if (!el.contains(e.target)) el.classList.remove('show');
+      });
+    });
+
+    // initialize dropdowns that exist on the page
+    setupDropdown('projectsDropdownBtn');
+    setupDropdown('contactDropdownBtn');
   </script>
 </body>
 </html>
